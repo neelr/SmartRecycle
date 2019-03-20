@@ -28,8 +28,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         captureSession.startRunning()
         
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(previewLayer)
         previewLayer.frame = imageframe.frame
+        view.layer.addSublayer(previewLayer)
         
         let dataOutput = AVCaptureVideoDataOutput()
         dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
