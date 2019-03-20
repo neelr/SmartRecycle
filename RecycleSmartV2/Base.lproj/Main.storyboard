@@ -1,24 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5SV-Qs-dZU">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller2-->
+        <scene sceneID="wpd-mJ-38l">
+            <objects>
+                <viewController id="5SV-Qs-dZU" customClass="ViewController2" customModule="RecycleSmartV2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="imx-3L-oD5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecycleSmart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCU-qj-UDh">
+                                <rect key="frame" x="38" y="51" width="244" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="9lR-Qq-x7C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                                <color key="textColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What is this?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-d7-wA0">
+                                <rect key="frame" x="86" y="130" width="146" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hK6-JY-Yle"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-K6-qUM">
+                                <rect key="frame" x="91" y="426" width="138" height="53"/>
+                                <color key="backgroundColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="action:" destination="5SV-Qs-dZU" eventType="touchUpInside" id="RMj-1O-Y2l"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="ahP-8Q-Bwy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Made By: Neel Redkar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-5X-A5a">
+                                <rect key="frame" x="91" y="487" width="151" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q8V-yc-pwp">
+                                <rect key="frame" x="38" y="159" width="244" height="259"/>
+                                <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <string key="text">This is an app that can help you when you don't know what to sort your waste as! All you have to do is scan the waste after clicking start, and the app will tell you what it thinks it is! Some info on the display, the number next to the prediction is the confidence percentage of the app. Also, this was originally created by Neel Redkar for the Contra Costa Science and Engineering Fair. I hope you use this tool well! If you have any questions or concerns, contact tectonroot@gmail.com</string>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83397425518134716" green="0.60947888968531216" blue="0.47529756937970302" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1fZ-d7-wA0" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="1iC-Oo-PGS"/>
+                            <constraint firstItem="QMN-K6-qUM" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="91" id="3AZ-iF-8Eq"/>
+                            <constraint firstItem="1fZ-d7-wA0" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="86" id="3QF-mD-ZaH"/>
+                            <constraint firstItem="1fZ-d7-wA0" firstAttribute="top" secondItem="xCU-qj-UDh" secondAttribute="bottom" constant="8" symbolic="YES" id="8O8-Pe-BVt"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="BSv-TD-Pj7"/>
+                            <constraint firstItem="xCU-qj-UDh" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="ENX-QH-OOW"/>
+                            <constraint firstItem="QMN-K6-qUM" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="NZ3-aG-dXl"/>
+                            <constraint firstItem="BUU-5X-A5a" firstAttribute="top" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="8" id="O1o-yE-Hj2"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="top" secondItem="1fZ-d7-wA0" secondAttribute="bottom" constant="8" symbolic="YES" id="QeW-cG-k3y"/>
+                            <constraint firstItem="QMN-K6-qUM" firstAttribute="top" secondItem="Q8V-yc-pwp" secondAttribute="bottom" constant="8" symbolic="YES" id="Xl0-wa-bVC"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="trailing" secondItem="xCU-qj-UDh" secondAttribute="trailing" id="ce5-Wg-k8T"/>
+                            <constraint firstItem="xCU-qj-UDh" firstAttribute="top" secondItem="akN-EQ-17r" secondAttribute="top" constant="31" id="d0B-GJ-Uu2"/>
+                            <constraint firstItem="xCU-qj-UDh" firstAttribute="centerX" secondItem="imx-3L-oD5" secondAttribute="centerX" id="gOe-bh-1P5"/>
+                            <constraint firstItem="QMN-K6-qUM" firstAttribute="centerX" secondItem="xCU-qj-UDh" secondAttribute="centerX" id="ofI-Mg-kV2"/>
+                            <constraint firstItem="BUU-5X-A5a" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="rzP-Bd-h48"/>
+                            <constraint firstItem="xCU-qj-UDh" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="38" id="uRg-Cw-XDd"/>
+                            <constraint firstItem="akN-EQ-17r" firstAttribute="bottom" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="89" id="vYY-af-cJ0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="akN-EQ-17r"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KHx-gH-OMQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qgV-RU-1yI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-663.75" y="133.09859154929578"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecycleSmartV2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Processing...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaL-up-uOW">
+                                <rect key="frame" x="24" y="457" width="271" height="57"/>
+                                <color key="backgroundColor" red="0.099127377608628484" green="0.5434342616580311" blue="0.071671842359904661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-x8-xSs">
+                                <rect key="frame" x="41" y="139" width="238" height="310"/>
+                                <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RecycleSmart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-fO-6gp">
+                                <rect key="frame" x="39" y="30" width="239" height="74"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="36"/>
+                                <color key="textColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Made By: Neel Redkar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn4-S6-7cY">
+                                <rect key="frame" x="85" y="530" width="151" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="139" id="4U2-UD-4wY"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Sc-rd-uxl"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="firstBaseline" secondItem="RaL-up-uOW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="5gl-xT-R7k"/>
+                            <constraint firstAttribute="bottom" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="119" id="5yC-yH-NW1"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7XN-so-BW1"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="firstBaseline" secondItem="RaL-up-uOW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="7wx-6b-2eq"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="firstBaseline" secondItem="RaL-up-uOW" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="SsW-om-qnK"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="top" secondItem="NaP-fO-6gp" secondAttribute="bottom" constant="35" id="d9P-qY-SNU"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="imm-3f-p9o"/>
+                            <constraint firstItem="NaP-fO-6gp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mr0-na-dh9"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="top" secondItem="RaL-up-uOW" secondAttribute="bottom" constant="16" id="ohw-Ih-Rt0"/>
+                            <constraint firstItem="RaL-up-uOW" firstAttribute="top" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="8" symbolic="YES" id="wEu-2L-VJi"/>
+                            <constraint firstItem="kn4-S6-7cY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="y5L-dP-hVa"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="centerX" secondItem="RaL-up-uOW" secondAttribute="centerX" id="znD-H3-SAg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0UL-CP-PR6" appends="YES" id="5Zc-H4-l2H"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="g7L-kD-9RO"/>
+                    <connections>
+                        <outlet property="identifierLabel" destination="RaL-up-uOW" id="WTZ-31-Ssx"/>
+                        <outlet property="imageframe" destination="RsZ-x8-xSs" id="bJU-4w-hsv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="0UL-CP-PR6">
+                    <connections>
+                        <segue destination="5SV-Qs-dZU" kind="presentation" identifier="othersegue" id="a6k-27-Ww6"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="444" y="59"/>
         </scene>
     </scenes>
 </document>

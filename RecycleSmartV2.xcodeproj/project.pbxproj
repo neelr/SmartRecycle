@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B318C4592241C3EA006E4232 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B318C4582241C3EA006E4232 /* ViewController2.swift */; };
 		B348C664223B0F9500AFB7E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C663223B0F9500AFB7E7 /* AppDelegate.swift */; };
 		B348C666223B0F9500AFB7E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C665223B0F9500AFB7E7 /* ViewController.swift */; };
 		B348C669223B0F9600AFB7E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B348C667223B0F9600AFB7E7 /* Main.storyboard */; };
@@ -14,6 +15,9 @@
 		B348C66E223B0F9800AFB7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B348C66C223B0F9800AFB7E7 /* LaunchScreen.storyboard */; };
 		B348C679223B0F9800AFB7E7 /* RecycleSmartV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C678223B0F9800AFB7E7 /* RecycleSmartV2Tests.swift */; };
 		B348C684223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C683223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift */; };
+		B348C693223B106500AFB7E7 /* RecycleSmartV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */; };
+		B348C694223B114C00AFB7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B348C66A223B0F9800AFB7E7 /* Assets.xcassets */; };
+		B348C695223B114D00AFB7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B348C66A223B0F9800AFB7E7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B318C4582241C3EA006E4232 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		B348C660223B0F9500AFB7E7 /* RecycleSmartV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecycleSmartV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348C663223B0F9500AFB7E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B348C665223B0F9500AFB7E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,8 @@
 		B348C67F223B0F9800AFB7E7 /* RecycleSmartV2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleSmartV2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B348C683223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleSmartV2UITests.swift; sourceTree = "<group>"; };
 		B348C685223B0F9800AFB7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B348C691223B101400AFB7E7 /* RecycleSmartV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycleSmartV2.entitlements; sourceTree = "<group>"; };
+		B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RecycleSmartV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +104,11 @@
 		B348C662223B0F9500AFB7E7 /* RecycleSmartV2 */ = {
 			isa = PBXGroup;
 			children = (
+				B318C4582241C3EA006E4232 /* ViewController2.swift */,
+				B348C691223B101400AFB7E7 /* RecycleSmartV2.entitlements */,
 				B348C663223B0F9500AFB7E7 /* AppDelegate.swift */,
 				B348C665223B0F9500AFB7E7 /* ViewController.swift */,
+				B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */,
 				B348C667223B0F9600AFB7E7 /* Main.storyboard */,
 				B348C66A223B0F9800AFB7E7 /* Assets.xcassets */,
 				B348C66C223B0F9800AFB7E7 /* LaunchScreen.storyboard */,
@@ -193,6 +203,14 @@
 				TargetAttributes = {
 					B348C65F223B0F9500AFB7E7 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					B348C673223B0F9800AFB7E7 = {
 						CreatedOnToolsVersion = 10.1;
@@ -239,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B348C694223B114C00AFB7E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B348C695223B114D00AFB7E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B348C666223B0F9500AFB7E7 /* ViewController.swift in Sources */,
+				B318C4592241C3EA006E4232 /* ViewController2.swift in Sources */,
+				B348C693223B106500AFB7E7 /* RecycleSmartV2.mlmodel in Sources */,
 				B348C664223B0F9500AFB7E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WSM8BL84QX;
 				INFOPLIST_FILE = RecycleSmartV2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WSM8BL84QX;
 				INFOPLIST_FILE = RecycleSmartV2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
