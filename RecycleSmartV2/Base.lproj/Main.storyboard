@@ -27,8 +27,8 @@
                                 <color key="textColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is this?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-d7-wA0">
-                                <rect key="frame" x="78" y="130" width="165" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What is this?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-d7-wA0">
+                                <rect key="frame" x="78" y="125" width="165" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="hK6-JY-Yle"/>
                                 </constraints>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-K6-qUM">
-                                <rect key="frame" x="91" y="426" width="138" height="53"/>
+                                <rect key="frame" x="91" y="459" width="138" height="53"/>
                                 <color key="backgroundColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <state key="normal" title="Start">
@@ -48,17 +48,17 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="ahP-8Q-Bwy"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q8V-yc-pwp">
-                                <rect key="frame" x="56" y="159" width="244" height="259"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q8V-yc-pwp">
+                                <rect key="frame" x="38" y="152" width="248" height="299"/>
                                 <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
-                                <string key="text">This is an app that can help you when you don't know what to sort your waste as! All you have to do is scan the waste after clicking start, and the app will tell you what it thinks it is! Some info on the display, the number next to the prediction is the confidence percentage of the app. Also, this was originally created by Neel Redkar for the Contra Costa Science and Engineering Fair. I hope you use this tool well! If you have any questions or concerns, contact tectonroot@gmail.com</string>
+                                <mutableString key="text">RecycleSmart helps you sort your recyclables! Only 9% of recyclables are actually recycled. You can help improve. All you do is scan the waste item after clicking START, and the app will recognize and identify what recyclable it is! The number next to the prediction is the confidence percentage assigned by the app. The higher the number, the better the prediction. This app was originally created by Neel Redkar for the Contra Costa Science and Engineering Fair. I hope you use this tool well! If you have any questions or concerns, contact tectonroot@gmail.com</mutableString>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© Neel Redkar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUU-5X-A5a">
-                                <rect key="frame" x="76" y="487" width="168" height="18"/>
+                                <rect key="frame" x="76" y="518" width="168" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,21 +71,21 @@
                             <constraint firstItem="QMN-K6-qUM" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="91" id="3AZ-iF-8Eq"/>
                             <constraint firstItem="1fZ-d7-wA0" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="78" id="3QF-mD-ZaH"/>
                             <constraint firstItem="1fZ-d7-wA0" firstAttribute="top" secondItem="xCU-qj-UDh" secondAttribute="bottom" constant="8" id="8O8-Pe-BVt"/>
-                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" constant="18" id="BSv-TD-Pj7"/>
-                            <constraint firstItem="BUU-5X-A5a" firstAttribute="top" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="8" id="CAz-CP-NIx"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" constant="2" id="BSv-TD-Pj7"/>
+                            <constraint firstItem="BUU-5X-A5a" firstAttribute="top" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="6" id="CAz-CP-NIx"/>
                             <constraint firstItem="xCU-qj-UDh" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="ENX-QH-OOW"/>
                             <constraint firstItem="QMN-K6-qUM" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="NZ3-aG-dXl"/>
                             <constraint firstItem="QMN-K6-qUM" firstAttribute="centerX" secondItem="akN-EQ-17r" secondAttribute="centerX" id="P5u-ZQ-eUf"/>
-                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="top" secondItem="1fZ-d7-wA0" secondAttribute="bottom" constant="8" id="QeW-cG-k3y"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="top" secondItem="1fZ-d7-wA0" secondAttribute="bottom" constant="6" id="QeW-cG-k3y"/>
                             <constraint firstItem="QMN-K6-qUM" firstAttribute="top" secondItem="Q8V-yc-pwp" secondAttribute="bottom" constant="8" symbolic="YES" id="Xl0-wa-bVC"/>
-                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="trailing" secondItem="xCU-qj-UDh" secondAttribute="trailing" constant="18" id="ce5-Wg-k8T"/>
+                            <constraint firstItem="Q8V-yc-pwp" firstAttribute="trailing" secondItem="xCU-qj-UDh" secondAttribute="trailing" constant="4" id="ce5-Wg-k8T"/>
                             <constraint firstItem="xCU-qj-UDh" firstAttribute="top" secondItem="akN-EQ-17r" secondAttribute="top" constant="31" id="d0B-GJ-Uu2"/>
                             <constraint firstItem="xCU-qj-UDh" firstAttribute="centerX" secondItem="imx-3L-oD5" secondAttribute="centerX" id="gOe-bh-1P5"/>
                             <constraint firstItem="BUU-5X-A5a" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="76" id="hUs-3C-VkA"/>
                             <constraint firstItem="BUU-5X-A5a" firstAttribute="centerX" secondItem="QMN-K6-qUM" secondAttribute="centerX" id="mTo-21-thR"/>
                             <constraint firstItem="QMN-K6-qUM" firstAttribute="centerX" secondItem="xCU-qj-UDh" secondAttribute="centerX" id="ofI-Mg-kV2"/>
                             <constraint firstItem="xCU-qj-UDh" firstAttribute="leading" secondItem="akN-EQ-17r" secondAttribute="leading" constant="38" id="uRg-Cw-XDd"/>
-                            <constraint firstItem="akN-EQ-17r" firstAttribute="bottom" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="89" id="vYY-af-cJ0"/>
+                            <constraint firstItem="akN-EQ-17r" firstAttribute="bottom" secondItem="QMN-K6-qUM" secondAttribute="bottom" constant="56" id="vYY-af-cJ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="akN-EQ-17r"/>
                     </view>
