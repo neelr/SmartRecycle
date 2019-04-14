@@ -6,36 +6,24 @@
 //
 
 import UIKit
-import AVKit
-import Vision
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageframe: UIView!
+    var apres : Any = []
+    @IBOutlet weak var imageframe: UIImageView!
+    @IBAction func photo_taker(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
     
+
     @IBOutlet weak var identifierLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let captureSession = AVCaptureSession()
-        captureSession.sessionPreset = .photo
-        
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
-        guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        captureSession.addInput(input)
-        
-        captureSession.startRunning()
-        
-        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        previewLayer.frame = imageframe.frame
-        view.layer.addSublayer(previewLayer)
-        
-        let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
-        captureSession.addOutput(dataOutput)
-        
-        
         setupIdentifierConfidenceLabel()
     }
     
@@ -46,35 +34,73 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
-    
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        usleep(500000)
-        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
-        
-        guard let model = try? VNCoreMLModel(for: RecycleSmartV2().model) else { return }
-        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
-            
-            
-            guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
-            
-            guard let firstObservation = results.first else { return }
-            
-            print(firstObservation.identifier, firstObservation.confidence)
-            DispatchQueue.main.async {
-                if (firstObservation.confidence<0.3) {
-                    self.identifierLabel.text = "trash  \(Int(firstObservation.confidence * 100))%"
-                } else if (firstObservation.confidence<0.2) {
-                    self.identifierLabel.text = "Undefined? \(Int(firstObservation.confidence * 100))%"
-                } else {
-                    self.identifierLabel.text = "\(firstObservation.identifier) \(Int(firstObservation.confidence * 100))%"
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func resize(_ image: UIImage) -> UIImage {
+        var actualHeight = Float(image.size.height)
+        var actualWidth = Float(image.size.width)
+        let maxHeight: Float = 300.0
+        let maxWidth: Float = 400.0
+        var imgRatio: Float = actualWidth / actualHeight
+        let maxRatio: Float = maxWidth / maxHeight
+        let compressionQuality: Float = 0.5
+        //50 percent compression
+        if actualHeight > maxHeight || actualWidth > maxWidth {
+            if imgRatio < maxRatio {
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight
+                actualWidth = imgRatio * actualWidth
+                actualHeight = maxHeight
+            }
+            else if imgRatio > maxRatio {
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth
+                actualHeight = imgRatio * actualHeight
+                actualWidth = maxWidth
+            }
+            else {
+                actualHeight = maxHeight
+                actualWidth = maxWidth
+            }
+        }
+        let rect = CGRect(x: 0.0, y: 0.0, width: CGFloat(actualWidth), height: CGFloat(actualHeight))
+        UIGraphicsBeginImageContext(rect.size)
+        image.draw(in: rect)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        let imageData = img?.jpegData(compressionQuality: CGFloat(compressionQuality))
+        UIGraphicsEndImageContext()
+        return UIImage(data: imageData!) ?? UIImage()
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard var selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an idmage, but was provided the following: \(info)")
+        }
+        // Set photoImageView to display the selected image.
+        imageframe.image = selectedImage
+        selectedImage = resize(selectedImage)
+        let imageData:NSData = selectedImage.pngData()! as NSData
+        let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+        var apireq = URLRequest(url: URL(string: "https://APICLOUDML--hacker22.repl.co/api")!)
+        apireq.setValue("text/plain", forHTTPHeaderField: "Content-Type")
+        apireq.httpMethod = "POST"
+        apireq.httpBody = Data(strBase64.utf8)
+        URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
+        print("*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#")
+        let task = URLSession.shared.dataTask(with: apireq) { data, response, error in
+            if let data = data {
+                do {
+                    var json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Array<Any>
+                    DispatchQueue.main.async {self.identifierLabel.text = "\(json[0]) \(json[1])%"}
+                } catch {
+                    print(error)
                 }
             }
-            
         }
-        
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+        task.resume()
+        print("*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#")
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
     }
-    
 }
 

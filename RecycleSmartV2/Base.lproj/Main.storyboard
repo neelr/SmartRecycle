@@ -43,6 +43,9 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="action:" destination="5SV-Qs-dZU" eventType="touchUpInside" id="RMj-1O-Y2l"/>
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="segue" id="ahP-8Q-Bwy"/>
@@ -52,7 +55,7 @@
                                 <rect key="frame" x="38" y="152" width="248" height="299"/>
                                 <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
-                                <mutableString key="text">RecycleSmart helps you sort your recyclables! Only 9% of recyclables are actually recycled. You can help improve. All you do is scan the waste item after clicking START, and the app will recognize and identify what recyclable it is! The number next to the prediction is the confidence percentage assigned by the app. The higher the number, the better the prediction. This app was originally created by Neel Redkar for the Contra Costa Science and Engineering Fair. I hope you use this tool well! If you have any questions or concerns, contact tectonroot@gmail.com</mutableString>
+                                <string key="text">RecycleSmart helps you sort your recyclables! Only 9% of recyclables are actually recycled. You can help improve. All you do is scan the waste item after clicking START, and the app will recognize and identify what recyclable it is! The number next to the prediction is the confidence percentage assigned by the app. The higher the number, the better the prediction. This app was originally created by Neel Redkar for the Contra Costa Science and Engineering Fair. I hope you use this tool well! If you have any questions or concerns, contact tectonroot@gmail.com</string>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -103,10 +106,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Processing...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaL-up-uOW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Image Loaded" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaL-up-uOW">
                                 <rect key="frame" x="85" y="507" width="175" height="43"/>
                                 <color key="backgroundColor" red="0.099127377608628484" green="0.5434342616580311" blue="0.071671842359904661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,35 +119,51 @@
                                 <color key="textColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-x8-xSs">
-                                <rect key="frame" x="60" y="83.5" width="200" height="392"/>
-                                <color key="backgroundColor" red="0.83462339640000005" green="0.60810726879999999" blue="0.47257453199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="RsZ-x8-xSs" secondAttribute="height" multiplier="201:394" id="pTN-x9-J84"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="© Neel Redkar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kn4-S6-7cY">
                                 <rect key="frame" x="96" y="558" width="152" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="RsZ-x8-xSs" customClass="UIImageView">
+                                <rect key="frame" x="67" y="94" width="200" height="279"/>
+                                <color key="backgroundColor" red="0.83462339640000005" green="0.60810726879999999" blue="0.47257453199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RsZ-x8-xSs" secondAttribute="height" multiplier="201:394" constant="57.667512690355323" id="pTN-x9-J84"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeI-ez-7uH">
+                                <rect key="frame" x="90" y="444" width="140" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.099127377609999998" green="0.54343426169999998" blue="0.071671842360000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="20"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="action:" destination="5SV-Qs-dZU" eventType="touchUpInside" id="XK4-we-dgY"/>
+                                    <action selector="photo_taker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0zc-Og-RxY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83462339639663696" green="0.60810726881027222" blue="0.47257453203201294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="2cg-OZ-4nB"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="2cg-OZ-4nB"/>
                             <constraint firstItem="NaP-fO-6gp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="D70-ZK-0wG"/>
                             <constraint firstItem="kn4-S6-7cY" firstAttribute="centerX" secondItem="RaL-up-uOW" secondAttribute="centerX" id="FIt-9O-ME8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NaP-fO-6gp" secondAttribute="trailing" constant="30" id="GdY-PZ-8AW"/>
                             <constraint firstItem="NaP-fO-6gp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="Jbp-e9-XSO"/>
                             <constraint firstItem="kn4-S6-7cY" firstAttribute="top" secondItem="RaL-up-uOW" secondAttribute="bottom" constant="8" id="Jxy-Mw-fmF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="92.5" id="NnJ-zx-tdT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="195" id="NnJ-zx-tdT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RaL-up-uOW" secondAttribute="trailing" constant="60" id="Wec-uL-hfS"/>
-                            <constraint firstItem="RaL-up-uOW" firstAttribute="top" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="31.5" id="Xu8-Ok-KR0"/>
+                            <constraint firstItem="RaL-up-uOW" firstAttribute="top" secondItem="RsZ-x8-xSs" secondAttribute="bottom" constant="134" id="Xu8-Ok-KR0"/>
                             <constraint firstItem="RaL-up-uOW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="j5v-OL-u1z"/>
-                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="centerX" secondItem="NaP-fO-6gp" secondAttribute="centerX" constant="-7" id="osB-nR-Ykt"/>
-                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="top" secondItem="NaP-fO-6gp" secondAttribute="bottom" constant="-2.6666666666666288" id="yL6-Wx-f2S"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="centerX" secondItem="NaP-fO-6gp" secondAttribute="centerX" id="osB-nR-Ykt"/>
+                            <constraint firstItem="RsZ-x8-xSs" firstAttribute="top" secondItem="NaP-fO-6gp" secondAttribute="bottom" constant="8" id="yL6-Wx-f2S"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -154,7 +173,7 @@
                     <navigationItem key="navigationItem" id="g7L-kD-9RO"/>
                     <connections>
                         <outlet property="identifierLabel" destination="RaL-up-uOW" id="WTZ-31-Ssx"/>
-                        <outlet property="imageframe" destination="RsZ-x8-xSs" id="bJU-4w-hsv"/>
+                        <outlet property="imageframe" destination="RsZ-x8-xSs" id="oua-hi-iGS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

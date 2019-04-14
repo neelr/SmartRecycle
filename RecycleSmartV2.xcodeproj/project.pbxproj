@@ -15,7 +15,6 @@
 		B348C66E223B0F9800AFB7E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B348C66C223B0F9800AFB7E7 /* LaunchScreen.storyboard */; };
 		B348C679223B0F9800AFB7E7 /* RecycleSmartV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C678223B0F9800AFB7E7 /* RecycleSmartV2Tests.swift */; };
 		B348C684223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348C683223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift */; };
-		B348C693223B106500AFB7E7 /* RecycleSmartV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */; };
 		B348C694223B114C00AFB7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B348C66A223B0F9800AFB7E7 /* Assets.xcassets */; };
 		B348C695223B114D00AFB7E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B348C66A223B0F9800AFB7E7 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		B348C683223B0F9800AFB7E7 /* RecycleSmartV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleSmartV2UITests.swift; sourceTree = "<group>"; };
 		B348C685223B0F9800AFB7E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B348C691223B101400AFB7E7 /* RecycleSmartV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecycleSmartV2.entitlements; sourceTree = "<group>"; };
-		B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = RecycleSmartV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				B348C691223B101400AFB7E7 /* RecycleSmartV2.entitlements */,
 				B348C663223B0F9500AFB7E7 /* AppDelegate.swift */,
 				B348C665223B0F9500AFB7E7 /* ViewController.swift */,
-				B348C692223B106500AFB7E7 /* RecycleSmartV2.mlmodel */,
 				B348C667223B0F9600AFB7E7 /* Main.storyboard */,
 				B348C66A223B0F9800AFB7E7 /* Assets.xcassets */,
 				B348C66C223B0F9800AFB7E7 /* LaunchScreen.storyboard */,
@@ -278,7 +275,6 @@
 			files = (
 				B348C666223B0F9500AFB7E7 /* ViewController.swift in Sources */,
 				B318C4592241C3EA006E4232 /* ViewController2.swift in Sources */,
-				B348C693223B106500AFB7E7 /* RecycleSmartV2.mlmodel in Sources */,
 				B348C664223B0F9500AFB7E7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
